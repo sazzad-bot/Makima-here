@@ -139,7 +139,6 @@ module.exports.onReply = async ({ api, event, Reply }) => {
   }catch(err){
       return api.sendMessage(`Error: ${err.message}`, event.threadID, event.messageID);
     }};
-
 module.exports.onChat = async ({ api, event,message }) => {
   try{
     const body = event.body ? event.body.toLowerCase() : ""
