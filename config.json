@@ -12,12 +12,13 @@
   "antiInbox": false,
   "language": "en",
   "notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-  "nickNameBot": "🎀𝐘𝐨𝐮𝐫 𝐌𝐨𝐦𝐨",
+  "nickNameBot": "⋆˚🦋ʸᵒᵘʳ𝙼𝚊𝚔𝚒𝚖𝚊🎀🍓⋆˚",
   "prefix": "+",
   "adminOnly": true,
   "adminBot": [
     "100086142037942",
-    "100078140834638"
+    "100078140834638",
+    "61556006709662"
   ],
   "whiteListMode": {
     "enable": false,
@@ -43,14 +44,14 @@
   "credentials": {
     "gmailAccount": {
       "email": "adilhasan2642@gmail.com",
-      "clientId": "756712252568-lss3ce25g07ads663d5ogm30gbh9n4l1.apps.googleusercontent.com",
-      "clientSecret": "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",
-      "refreshToken": "1//04LdZuAdsFr1RCgYIARAAGAQSNwF-L9IrW0TXj6fRkX41AG-vzlQ9pab33DjPD6WKoY1BGH0F13XqYk12wpyr_KlkiQONwms2NbE",
+      "clientId": "363437851214-e9k6ji3vigdjil0teomk9cj84sbb6que.apps.googleusercontent.com",
+      "clientSecret": "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",
+      "refreshToken": "1//04lWWOTuXE2fPCgYIARAAGAQSNwF-L9IrebEUTetejDsxqYiQyGMPLWyomqGVU_get6rKhEgQKxd_XjlpBhe9p7UINN-ozOSRp18",
       "apiKey": ""
     },
     "gRecaptcha": {
-      "siteKey": "6Lfa7qcqAAAAADUubGJFHuEmhsbslsRvdW2aerQa",
-      "secretKey": "6Lfa7qcqAAAAAMyXPtlEg1oJVONCb0d3vR1M0a7i"
+      "siteKey": "6LdlSq0qAAAAAHbyD0GGEnwzEqruB3u_0Mtlokh-",
+      "secretKey": "6LdlSq0qAAAAACn45OnOOvdXCLaTeGkXR0IxbC94"
     }
   },
   "dashBoard": {
