@@ -14,8 +14,8 @@ module.exports = {
     guide: { en: "+info" },
     envConfig: {}
   },
-  onStart: async function ({ message }) {
-    const botName = "🎀𝐘𝐨𝐮𝐫 𝐌𝐨𝐦𝐨";
+  onStart: async function ({ message, event, usersData }) {
+    const botName = "⋆˚🦋ʸᵒᵘʳ𝙼𝚊𝚔𝚒𝚖𝚊🎀🍓⋆˚";
     const botPrefix = "+";
     const authorName = "A Dil";
     const ownAge = "15";
@@ -25,7 +25,7 @@ module.exports = {
     const tikTok = "";
     const urls = JSON.parse(fs.readFileSync('cliff.json'));
     const link = urls[Math.floor(Math.random() * urls.length)];
-    const now = moment().tz('Asia/Jakarta');
+    const now = moment().tz('Asia/dhaka');
     const date = now.format('MMMM Do YYYY');
     const time = now.format('h:mm:ss A');
     const uptime = process.uptime();
@@ -34,20 +34,22 @@ module.exports = {
     const hours = Math.floor((uptime / (60 * 60)) % 24);
     const days = Math.floor(uptime / (60 * 60 * 24));
     const uptimeString = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-
+    var id1 = event.senderID;
+    var name1 = await usersData.getName(id1);
     message.reply({
-      body: `《  Bot & Owner Info 》
-\Name: ${botName}
-\Bot Prefix: ${botPrefix}
-\owner: ${authorName}
-\age : ${ownAge}
-\Facebook: ${authorFB}
-\Instagram: ${authorInsta}
-\TikTok: ${tikTok}
-\Datee: ${date}
-\Time: ${time}
-\Team: ${teamName}
-\Uptime: ${uptimeString}
+      body: ` ➠${name1}
+	  《  📌𝐁𝐨𝐭 & 𝐎𝐰𝐧𝐞𝐫 𝐈𝐧𝐟𝐨 》
+\🌸𝑵𝒂𝒎𝒆: ${botName}
+\📎𝑩𝒐𝒕 𝑷𝒓𝒆𝒇𝒊𝒙: ${botPrefix}
+\👑𝑶𝒘𝒏𝒆𝒓: ${authorName}
+\👦🏻𝑨𝒈𝒆 : ${ownAge}
+\📱𝑭𝒂𝒄𝒆𝒃𝒐𝒐𝒌: ${authorFB}
+\🅾𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎: ${authorInsta}
+// \🐔𝑻𝒊𝒌𝑻𝒐𝒌: ${tikTok} //for tik tok add
+\📅𝑫𝒂𝒕𝒆: ${date}
+\🕔𝑻𝒊𝒎𝒆: ${time}
+\🚀𝑻𝒆𝒂𝒎: ${teamName}
+\⌛𝑼𝒑𝒕𝒊𝒎𝒆: ${uptimeString}
 \===============`,
       attachment: await global.utils.getStreamFromURL(link)
     });
