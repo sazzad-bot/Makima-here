@@ -59,6 +59,6 @@
   },
   "commandUnload": [
     "toilet.js",
-    "corn.js"
+    "flirt.js"
   ]
 }
