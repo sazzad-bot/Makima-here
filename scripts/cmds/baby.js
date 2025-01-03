@@ -23,7 +23,8 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
   const dipto = args.join(" ").toLowerCase();
   const uid = event.senderID;
   let command, comd, final;
-
+  var id1 = event.senderID;
+  var name1 = await usersData.getName(id1);
   try {
     if (!args[0]) {
       const ran = ["Bolo baby", "hum", "type help baby", "type !baby hi"];
@@ -142,9 +143,9 @@ module.exports.onReply = async ({ api, event, Reply }) => {
 module.exports.onChat = async ({ api, event,message }) => {
   try{
     const body = event.body ? event.body.toLowerCase() : ""
-    if(body.startsWith("baby") || body.startsWith("bby") || body.startsWith("janu")){
+    if(body.startsWith("makima") || body.startsWith("baby") || body.startsWith("bby") || body.startsWith("janu")){
       const arr = body.replace(/^\S+\s*/, "")
-      if(!arr){ api.sendMessage("Present 💐", event.threadID, (error, info) => {
+      if(!arr){ api.sendMessage( `𝗛𝗲𝗿𝗲 𝗜𝘀 𝘆𝗼𝘂𝗿 𝗠𝗮𝗸𝗶𝗺𝗮😘`, event.threadID, (error, info) => {
       global.GoatBot.onReply.set(info.messageID, {
         commandName: this.config.name,
         type: "reply",
@@ -164,5 +165,5 @@ module.exports.onChat = async ({ api, event,message }) => {
     }, event.messageID);
     }
   }catch(err){
-      return api.sendMessage(`Error baby 🥺🥺`, event.threadID, event.messageID);
+      return api.sendMessage(`𝙀𝙧𝙧𝙤𝙧 𝙗𝙖𝙗𝙮 🥺🥺`, event.threadID, event.messageID);
     }};
