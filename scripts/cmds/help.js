@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "【 🎀𝐘𝐨𝐮𝐫 𝐌𝐨𝐦𝐨 】";
+const doNotDelete = "【 ⋆˚🦋ʸᵒᵘʳ𝙼𝚊𝚔𝚒𝚖𝚊🎀🍓⋆˚ 】";
 /**
 * @author NTKhang
 * @author: do not delete it
@@ -103,7 +103,7 @@ module.exports = {
 			help: "╔═════════════❒"
 				+ "\n%1"
 				+ "\n╠═════❒"
-				+ "\n║ 𝗣𝗮𝗴𝗲🌺 《 %2/%3 》"
+				+ "\n║ 𝗣𝗮𝗴𝗲🦋 《 %2/%3 》"
 				+ "\n║ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 %4 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱"
 				+ "\n║ ➠ 𝗧𝘆𝗽𝗲 %5𝗵𝗲𝗹𝗽 〈𝗽𝗮𝗴𝗲〉 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗰𝗼𝗺𝗺𝗮𝗻𝗱 𝗹𝗶𝘀𝘁"
 				+ "\n║ ➠ 𝗧𝘆𝗽𝗲 %5𝗵𝗲𝗹𝗽 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝗵𝗼𝘄 𝘁𝗼 𝘂𝘀𝗲 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱"
@@ -236,7 +236,7 @@ module.exports = {
 
 				const returnArray = allPage[page - 1] || [];
 				const startNumber = (page - 1) * numberOfOnePage + 1;
-				msg += (returnArray || []).reduce((text, item, index) => text += `🌺➳ ${index + startNumber}${index + startNumber < 10 ? " " : ""}. ${item.data}\n`, '').slice(0, -1);
+				msg += (returnArray || []).reduce((text, item, index) => text += `🦋➳ ${index + startNumber}${index + startNumber < 10 ? " " : ""}. ${item.data}\n`, '').slice(0, -1);
 				await message.reply(getLang("help", msg, page, totalPage, commands.size, prefix, doNotDelete));
 			}
 			else if (sortHelp == "category") {
@@ -256,7 +256,7 @@ module.exports = {
 				arrayInfo.sort((a, b) => (a.category < b.category ? -1 : 1));
 				arrayInfo.forEach((data, index) => {
 					const categoryUpcase = `${index == 0 ? `╔` : `╠`}═══ ${data.category.toUpperCase()} ${index == 0 ? "❒" : "❒"}`;
-					data.names = data.names.sort().map(item => item = `🪶➳ ${item}`);
+					data.names = data.names.sort().map(item => item = `🦋➳ ${item}`);
 					msg += `${categoryUpcase}\n${data.names.join("\n")}\n`;
 				});
 				message.reply(getLang("help2", msg, commands.size, prefix, doNotDelete));
