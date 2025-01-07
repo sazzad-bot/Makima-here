@@ -8,10 +8,10 @@ module.exports = {
     countDown: 5,
     role: 0,
 	description: {
-		en: "no prefix. Type 𝐀𝐫𝐚/𝐘𝐨𝐰𝐚𝐢𝐦𝐨/𝐘𝐚𝐦𝐞𝐭𝐞/𝐁𝐚𝐧𝐤𝐚𝐢/𝐔𝐦𝐚𝐢/𝐎𝐧𝐢𝐜𝐡𝐚𝐧/𝐈𝐭𝐚𝐜𝐡𝐢/𝐔𝐳𝐮𝐦𝐚𝐤𝐢/𝐃𝐚𝐭𝐭𝐞𝐛𝐚𝐲𝐨/𝐑𝐚𝐬𝐞𝐧𝐠𝐚𝐧"
+		en: "no prefix and to see list type list"
 	},
     shortDescription: "no prefix",
-    longDescription: "no prefix. Type 𝐀𝐫𝐚/𝐘𝐨𝐰𝐚𝐢𝐦𝐨/𝐘𝐚𝐦𝐞𝐭𝐞/𝐁𝐚𝐧𝐤𝐚𝐢/𝐔𝐦𝐚𝐢/𝐎𝐧𝐢𝐜𝐡𝐚𝐧/𝐈𝐭𝐚𝐜𝐡𝐢/𝐔𝐳𝐮𝐦𝐚𝐤𝐢/𝐃𝐚𝐭𝐭𝐞𝐛𝐚𝐲𝐨/𝐑𝐚𝐬𝐞𝐧𝐠𝐚𝐧",
+    longDescription: "no prefix. To see list  type list. Type 𝐀𝐫𝐚/𝐘𝐨𝐰𝐚𝐢𝐦𝐨/𝐘𝐚𝐦𝐞𝐭𝐞/𝐁𝐚𝐧𝐤𝐚𝐢/𝐔𝐦𝐚𝐢/𝐎𝐧𝐢𝐜𝐡𝐚𝐧/𝐈𝐭𝐚𝐜𝐡𝐢/𝐔𝐳𝐮𝐦𝐚𝐤𝐢/𝐃𝐚𝐭𝐭𝐞𝐛𝐚𝐲𝐨/𝐑𝐚𝐬𝐞𝐧𝐠𝐚𝐧",
     category: "no prefix",
   },
 
@@ -94,6 +94,11 @@ case "haha":
             attachment: fs.createReadStream("rasengan.mp3"),
           });
           await api.setMessageReaction("🌀", event.messageID, event.threadID, api);
+		   case "list":
+          message.reply({
+            body: "📌𝗡𝗼 𝗽𝗿𝗲𝗳𝗶𝘅 𝘃𝗼𝗶𝗰𝗲 𝗹𝗶𝘀𝘁📝:\n═════════════════\n1.𝐀𝐫𝐚\n2.𝐘𝐨𝐰𝐚𝐢𝐦𝐨\n3.𝐘𝐚𝐦𝐞𝐭𝐞\n4.𝐁𝐚𝐧𝐤𝐚𝐢\n5.𝐔𝐦𝐚𝐢\n6.𝐎𝐧𝐢𝐜𝐡𝐚𝐧\n7.𝐈𝐭𝐚𝐜𝐡𝐢\n8.𝐔𝐳𝐮𝐦𝐚𝐤𝐢\n9.𝐃𝐚𝐭𝐭𝐞𝐛𝐚𝐲𝐨\n10.𝐑𝐚𝐬𝐞𝐧𝐠𝐚𝐧",
+          });
+          await api.setMessageReaction("📋", event.messageID, event.threadID, api);
    default:
           return;
       }
