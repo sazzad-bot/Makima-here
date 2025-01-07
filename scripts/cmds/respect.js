@@ -16,10 +16,12 @@ module.exports = {
     try {
       console.log('Sender ID:', event.senderID);
 
-      const permission = ["100078690213463"];
+      const permission = [
+	  "100086142037942"
+	  ];
       if (!permission.includes(event.senderID)) {
         return api.sendMessage(
-          "Only edi can use cmd respect",
+          "Only ADIL can use cmd respect",
           event.threadID,
           event.messageID
         );
