@@ -23,13 +23,13 @@ module.exports = {
 
 	langs: {
 		en: {
-			reset: "Momo prefix has been reset to default: %1",
+			reset: "🦋𝙼𝚊𝚔𝚒𝚖𝚊 prefix has been reset to default: %1",
 			onlyAdmin: "Sorry, only admin can change the prefix of the system.",
-			confirmGlobal: "React to this message to confirm changing Momo's global prefix.",
-			confirmThisThread: "React to this message to confirm changing Momo's prefix in your chat box.",
-			successGlobal: "Changed the prefix of Momo's global system to: %1",
-			successThisThread: "Changed Momo's prefix in your chat box to: %1",
-			myPrefix: "𝑯𝒆𝒍𝒍𝒐, 𝑴𝒚 𝒏𝒂𝒎𝒆 𝒊𝒔 ⋆˚🦋ʸᵒᵘʳ𝙼𝚊𝚔𝚒𝚖𝚊🎀🍓⋆˚ ((+_+))\n𝑯𝒆𝒓𝒆'𝒔 𝒎𝒚 𝑷𝒓𝒆𝒇𝒊𝒙 :\n🦋ʸᵒᵘʳ𝙼𝚊𝚔𝚒𝚖𝚊'𝒔 𝑷𝒓𝒆𝒇𝒊𝒙 𝑺𝒚𝒔𝒕𝒆𝒎 : %1\n🦋ʸᵒᵘʳ𝙼𝚊𝚔𝚒𝚖𝚊'𝒔 𝑷𝒓𝒆𝒇𝒊𝒙 𝒊𝒔 𝒊𝒏 𝒚𝒐𝒖𝒓 𝒃𝒐𝒙 : %2"
+			confirmGlobal: "React to this message to confirm changing 🦋𝙼𝚊𝚔𝚒𝚖𝚊's global prefix.",
+			confirmThisThread: "React to this message to confirm changing 🦋𝙼𝚊𝚔𝚒𝚖𝚊's prefix in your chat box.",
+			successGlobal: "Changed the prefix of 🦋𝙼𝚊𝚔𝚒𝚖𝚊's global system to: %1",
+			successThisThread: "Changed 🦋𝙼𝚊𝚔𝚒𝚖𝚊's prefix in your chat box to: %1",
+			myPrefix: "𝑯𝒆𝒍𝒍𝒐, 𝑴𝒚 𝒏𝒂𝒎𝒆 𝒊𝒔 : 🦋𝙼𝚊𝚔𝚒𝚖𝚊🍓\n𝑯𝒆𝒓𝒆'𝒔 𝒎𝒚 𝑷𝒓𝒆𝒇𝒊𝒙 :\n🦋𝙼𝚊𝚔𝚒𝚖𝚊'𝒔 𝑷𝒓𝒆𝒇𝒊𝒙 𝑺𝒚𝒔𝒕𝒆𝒎 : %1\n🦋𝙼𝚊𝚔𝚒𝚖𝚊'𝒔 𝑷𝒓𝒆𝒇𝒊𝒙 𝒊𝒔 𝒊𝒏 𝒚𝒐𝒖𝒓 𝒃𝒐𝒙 : %2"
 		}
 	},
 
