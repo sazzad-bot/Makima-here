@@ -5,7 +5,7 @@
   },
   {
     "name": "help",
-    "usage": 192
+    "usage": 200
   },
   {
     "name": "count",
@@ -25,19 +25,19 @@
   },
   {
     "name": "sing",
-    "usage": 239
+    "usage": 240
   },
   {
     "name": "",
-    "usage": 246
+    "usage": 288
   },
   {
     "name": "all",
-    "usage": 46
+    "usage": 49
   },
   {
     "name": "ytb",
-    "usage": 129
+    "usage": 130
   },
   {
     "name": "file",
@@ -49,7 +49,7 @@
   },
   {
     "name": "uid",
-    "usage": 33
+    "usage": 37
   },
   {
     "name": "font",
@@ -153,7 +153,7 @@
   },
   {
     "name": "pair",
-    "usage": 1100
+    "usage": 1107
   },
   {
     "name": "profile",
@@ -189,7 +189,7 @@
   },
   {
     "name": "anipic",
-    "usage": 18
+    "usage": 19
   },
   {
     "name": "spam",
@@ -201,7 +201,7 @@
   },
   {
     "name": "setrole",
-    "usage": 2
+    "usage": 4
   },
   {
     "name": "no",
@@ -213,7 +213,7 @@
   },
   {
     "name": "admin",
-    "usage": 25
+    "usage": 30
   },
   {
     "name": "cs2",
@@ -293,7 +293,7 @@
   },
   {
     "name": "list",
-    "usage": 1
+    "usage": 2
   },
   {
     "name": "rules",
@@ -309,7 +309,7 @@
   },
   {
     "name": "adduser",
-    "usage": 16
+    "usage": 20
   },
   {
     "name": "kick",
@@ -325,7 +325,7 @@
   },
   {
     "name": "video",
-    "usage": 19
+    "usage": 20
   },
   {
     "name": "bunkai",
@@ -461,11 +461,11 @@
   },
   {
     "name": "pending",
-    "usage": 22
+    "usage": 23
   },
   {
     "name": "pin",
-    "usage": 43
+    "usage": 45
   },
   {
     "name": "paie",
@@ -517,7 +517,7 @@
   },
   {
     "name": "clear2",
-    "usage": 6
+    "usage": 7
   },
   {
     "name": "guide",
@@ -533,11 +533,11 @@
   },
   {
     "name": "bal",
-    "usage": 21
+    "usage": 22
   },
   {
     "name": "say",
-    "usage": 185
+    "usage": 200
   },
   {
     "name": "onlyadminbox",
@@ -557,7 +557,7 @@
   },
   {
     "name": "hack",
-    "usage": 25
+    "usage": 26
   },
   {
     "name": "insta",
@@ -653,7 +653,7 @@
   },
   {
     "name": "tag",
-    "usage": 16
+    "usage": 19
   },
   {
     "name": "relationship",
@@ -761,7 +761,7 @@
   },
   {
     "name": "join",
-    "usage": 3
+    "usage": 4
   },
   {
     "name": "pair@labiba",
@@ -945,7 +945,7 @@
   },
   {
     "name": "ai",
-    "usage": 8
+    "usage": 9
   },
   {
     "name": "merreid",
@@ -997,7 +997,7 @@
   },
   {
     "name": "vip",
-    "usage": 91
+    "usage": 94
   },
   {
     "name": "18",
@@ -1049,7 +1049,7 @@
   },
   {
     "name": "pp",
-    "usage": 26
+    "usage": 30
   },
   {
     "name": "link",
@@ -1057,7 +1057,7 @@
   },
   {
     "name": "inbox",
-    "usage": 3
+    "usage": 7
   },
   {
     "name": "pire",
@@ -1105,7 +1105,7 @@
   },
   {
     "name": "prefix",
-    "usage": 15
+    "usage": 17
   },
   {
     "name": "hey",
@@ -1137,7 +1137,7 @@
   },
   {
     "name": "antiout",
-    "usage": 4
+    "usage": 5
   },
   {
     "name": "tui",
@@ -1273,7 +1273,7 @@
   },
   {
     "name": "user",
-    "usage": 8
+    "usage": 11
   },
   {
     "name": "bby2",
@@ -1389,7 +1389,7 @@
   },
   {
     "name": "ping",
-    "usage": 4
+    "usage": 6
   },
   {
     "name": "ship",
@@ -1593,7 +1593,7 @@
   },
   {
     "name": "running",
-    "usage": 3
+    "usage": 4
   },
   {
     "name": "sed",
@@ -1657,7 +1657,7 @@
   },
   {
     "name": "girl",
-    "usage": 1
+    "usage": 8
   },
   {
     "name": "hug3",
@@ -1909,7 +1909,7 @@
   },
   {
     "name": "info",
-    "usage": 41
+    "usage": 42
   },
   {
     "name": "cbin",
@@ -1957,7 +1957,7 @@
   },
   {
     "name": "u",
-    "usage": 60
+    "usage": 71
   },
   {
     "name": "kiss@angel",
@@ -1965,7 +1965,7 @@
   },
   {
     "name": "up",
-    "usage": 71
+    "usage": 127
   },
   {
     "name": "siesta",
@@ -2061,7 +2061,7 @@
   },
   {
     "name": "qz",
-    "usage": 5
+    "usage": 6
   },
   {
     "name": "quize",
@@ -2145,7 +2145,7 @@
   },
   {
     "name": "spygc",
-    "usage": 1
+    "usage": 2
   },
   {
     "name": "2",
@@ -2173,7 +2173,7 @@
   },
   {
     "name": "setname",
-    "usage": 22
+    "usage": 25
   },
   {
     "name": "cry",
@@ -2253,7 +2253,7 @@
   },
   {
     "name": "art",
-    "usage": 1
+    "usage": 3
   },
   {
     "name": "about",
@@ -2277,11 +2277,11 @@
   },
   {
     "name": "ads",
-    "usage": 2
+    "usage": 3
   },
   {
     "name": "age",
-    "usage": 1
+    "usage": 5
   },
   {
     "name": "set",
@@ -2337,7 +2337,7 @@
   },
   {
     "name": "sing2",
-    "usage": 1
+    "usage": 2
   },
   {
     "name": "sing3",
@@ -2461,7 +2461,7 @@
   },
   {
     "name": "uptime",
-    "usage": 5
+    "usage": 7
   },
   {
     "name": "autotimer",
@@ -2505,7 +2505,7 @@
   },
   {
     "name": "up2",
-    "usage": 1
+    "usage": 3
   },
   {
     "name": "dp10",
@@ -2585,6 +2585,46 @@
   },
   {
     "name": "darkmeme",
+    "usage": 1
+  },
+  {
+    "name": "gilr",
+    "usage": 1
+  },
+  {
+    "name": "ade",
+    "usage": 1
+  },
+  {
+    "name": "unst",
+    "usage": 1
+  },
+  {
+    "name": "makima",
+    "usage": 1
+  },
+  {
+    "name": "upt2",
+    "usage": 2
+  },
+  {
+    "name": "pairv3",
+    "usage": 1
+  },
+  {
+    "name": "in",
+    "usage": 1
+  },
+  {
+    "name": "setname@za",
+    "usage": 1
+  },
+  {
+    "name": "sistam",
+    "usage": 1
+  },
+  {
+    "name": "pz",
     "usage": 1
   }
 ]
