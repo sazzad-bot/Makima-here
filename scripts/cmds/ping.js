@@ -16,7 +16,7 @@ module.exports = {
 
     const botLatency = Date.now() - startTime;
     const apiLatency = message.timestamp - startTime;
-    const currentDate = moment().tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss');
+    const currentDate = moment().tz('Asia/dhaka').format('YYYY-MM-DD HH:mm:ss');
 
     api.sendMessage({
       body: `📅 | Date: ${currentDate}
