@@ -5,7 +5,7 @@
   },
   {
     "name": "help",
-    "usage": 210
+    "usage": 212
   },
   {
     "name": "count",
@@ -25,19 +25,19 @@
   },
   {
     "name": "sing",
-    "usage": 245
+    "usage": 246
   },
   {
     "name": "",
-    "usage": 310
+    "usage": 315
   },
   {
     "name": "all",
-    "usage": 50
+    "usage": 51
   },
   {
     "name": "ytb",
-    "usage": 131
+    "usage": 133
   },
   {
     "name": "file",
@@ -49,7 +49,7 @@
   },
   {
     "name": "uid",
-    "usage": 38
+    "usage": 40
   },
   {
     "name": "font",
@@ -61,7 +61,7 @@
   },
   {
     "name": "unsend",
-    "usage": 412
+    "usage": 416
   },
   {
     "name": "women",
@@ -93,7 +93,7 @@
   },
   {
     "name": "amv",
-    "usage": 7
+    "usage": 10
   },
   {
     "name": "6",
@@ -189,7 +189,7 @@
   },
   {
     "name": "anipic",
-    "usage": 19
+    "usage": 21
   },
   {
     "name": "spam",
@@ -197,11 +197,11 @@
   },
   {
     "name": "role",
-    "usage": 2
+    "usage": 3
   },
   {
     "name": "setrole",
-    "usage": 4
+    "usage": 5
   },
   {
     "name": "no",
@@ -213,7 +213,7 @@
   },
   {
     "name": "admin",
-    "usage": 34
+    "usage": 35
   },
   {
     "name": "cs2",
@@ -289,7 +289,7 @@
   },
   {
     "name": "album",
-    "usage": 101
+    "usage": 102
   },
   {
     "name": "list",
@@ -309,7 +309,7 @@
   },
   {
     "name": "adduser",
-    "usage": 20
+    "usage": 21
   },
   {
     "name": "kick",
@@ -453,7 +453,7 @@
   },
   {
     "name": "pastebin",
-    "usage": 33
+    "usage": 38
   },
   {
     "name": "autolink",
@@ -461,7 +461,7 @@
   },
   {
     "name": "pending",
-    "usage": 26
+    "usage": 27
   },
   {
     "name": "pin",
@@ -481,7 +481,7 @@
   },
   {
     "name": "kiss",
-    "usage": 35
+    "usage": 36
   },
   {
     "name": "animefy",
@@ -805,7 +805,7 @@
   },
   {
     "name": "respect",
-    "usage": 8
+    "usage": 9
   },
   {
     "name": "pir5",
@@ -997,7 +997,7 @@
   },
   {
     "name": "vip",
-    "usage": 94
+    "usage": 95
   },
   {
     "name": "18",
@@ -1049,7 +1049,7 @@
   },
   {
     "name": "pp",
-    "usage": 31
+    "usage": 33
   },
   {
     "name": "link",
@@ -1105,7 +1105,7 @@
   },
   {
     "name": "prefix",
-    "usage": 17
+    "usage": 19
   },
   {
     "name": "hey",
@@ -1389,11 +1389,11 @@
   },
   {
     "name": "ping",
-    "usage": 6
+    "usage": 7
   },
   {
     "name": "ship",
-    "usage": 5
+    "usage": 8
   },
   {
     "name": "space",
@@ -1593,7 +1593,7 @@
   },
   {
     "name": "running",
-    "usage": 4
+    "usage": 5
   },
   {
     "name": "sed",
@@ -1725,7 +1725,7 @@
   },
   {
     "name": "ball",
-    "usage": 13
+    "usage": 16
   },
   {
     "name": "cp",
@@ -1889,7 +1889,7 @@
   },
   {
     "name": "help3",
-    "usage": 12
+    "usage": 14
   },
   {
     "name": "help4",
@@ -1957,7 +1957,7 @@
   },
   {
     "name": "u",
-    "usage": 73
+    "usage": 76
   },
   {
     "name": "kiss@angel",
@@ -1965,7 +1965,7 @@
   },
   {
     "name": "up",
-    "usage": 135
+    "usage": 138
   },
   {
     "name": "siesta",
@@ -2485,7 +2485,7 @@
   },
   {
     "name": "cmdstore",
-    "usage": 2
+    "usage": 3
   },
   {
     "name": "colourbg",
@@ -2637,7 +2637,7 @@
   },
   {
     "name": "cmds",
-    "usage": 4
+    "usage": 5
   },
   {
     "name": "cs3",
@@ -2698,5 +2698,25 @@
   {
     "name": "alled",
     "usage": 1
+  },
+  {
+    "name": "album2",
+    "usage": 3
+  },
+  {
+    "name": "1",
+    "usage": 1
+  },
+  {
+    "name": "pig",
+    "usage": 1
+  },
+  {
+    "name": "pt",
+    "usage": 1
+  },
+  {
+    "name": "cs",
+    "usage": 8
   }
 ]
