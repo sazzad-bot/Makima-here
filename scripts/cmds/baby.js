@@ -164,6 +164,5 @@ module.exports.onChat = async ({ api, event,message }) => {
       });
     }, event.messageID);
     }
-  }catch(err){
-      return api.sendMessage(`𝙀𝙧𝙧𝙤𝙧 𝙗𝙖𝙗𝙮 🥺🥺`, event.threadID, event.messageID);
-    }};
+  }
+  };
