@@ -5,7 +5,7 @@
   },
   {
     "name": "help",
-    "usage": 212
+    "usage": 217
   },
   {
     "name": "count",
@@ -25,15 +25,15 @@
   },
   {
     "name": "sing",
-    "usage": 246
+    "usage": 250
   },
   {
     "name": "",
-    "usage": 315
+    "usage": 317
   },
   {
     "name": "all",
-    "usage": 51
+    "usage": 53
   },
   {
     "name": "ytb",
@@ -153,7 +153,7 @@
   },
   {
     "name": "pair",
-    "usage": 1108
+    "usage": 1109
   },
   {
     "name": "profile",
@@ -241,7 +241,7 @@
   },
   {
     "name": "pair2",
-    "usage": 19
+    "usage": 23
   },
   {
     "name": "pair3",
@@ -309,11 +309,11 @@
   },
   {
     "name": "adduser",
-    "usage": 21
+    "usage": 23
   },
   {
     "name": "kick",
-    "usage": 25
+    "usage": 26
   },
   {
     "name": "update",
@@ -389,7 +389,7 @@
   },
   {
     "name": "offbot",
-    "usage": 25
+    "usage": 26
   },
   {
     "name": "pls",
@@ -653,7 +653,7 @@
   },
   {
     "name": "tag",
-    "usage": 23
+    "usage": 24
   },
   {
     "name": "relationship",
@@ -997,7 +997,7 @@
   },
   {
     "name": "vip",
-    "usage": 95
+    "usage": 96
   },
   {
     "name": "18",
@@ -1049,7 +1049,7 @@
   },
   {
     "name": "pp",
-    "usage": 33
+    "usage": 34
   },
   {
     "name": "link",
@@ -1057,7 +1057,7 @@
   },
   {
     "name": "inbox",
-    "usage": 7
+    "usage": 8
   },
   {
     "name": "pire",
@@ -1273,7 +1273,7 @@
   },
   {
     "name": "user",
-    "usage": 11
+    "usage": 12
   },
   {
     "name": "bby2",
@@ -1965,7 +1965,7 @@
   },
   {
     "name": "up",
-    "usage": 138
+    "usage": 145
   },
   {
     "name": "siesta",
@@ -2717,6 +2717,14 @@
   },
   {
     "name": "cs",
-    "usage": 8
+    "usage": 10
+  },
+  {
+    "name": "cd",
+    "usage": 1
+  },
+  {
+    "name": "commoad",
+    "usage": 1
   }
 ]
