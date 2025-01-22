@@ -5,7 +5,7 @@
   },
   {
     "name": "help",
-    "usage": 217
+    "usage": 221
   },
   {
     "name": "count",
@@ -25,15 +25,15 @@
   },
   {
     "name": "sing",
-    "usage": 250
+    "usage": 251
   },
   {
     "name": "",
-    "usage": 317
+    "usage": 320
   },
   {
     "name": "all",
-    "usage": 53
+    "usage": 54
   },
   {
     "name": "ytb",
@@ -41,7 +41,7 @@
   },
   {
     "name": "file",
-    "usage": 47
+    "usage": 48
   },
   {
     "name": "gist",
@@ -77,7 +77,7 @@
   },
   {
     "name": "listbox",
-    "usage": 21
+    "usage": 22
   },
   {
     "name": "clear",
@@ -217,7 +217,7 @@
   },
   {
     "name": "cs2",
-    "usage": 15
+    "usage": 22
   },
   {
     "name": "python",
@@ -225,7 +225,7 @@
   },
   {
     "name": "github",
-    "usage": 3
+    "usage": 7
   },
   {
     "name": "plz",
@@ -289,11 +289,11 @@
   },
   {
     "name": "album",
-    "usage": 102
+    "usage": 107
   },
   {
     "name": "list",
-    "usage": 2
+    "usage": 3
   },
   {
     "name": "rules",
@@ -461,7 +461,7 @@
   },
   {
     "name": "pending",
-    "usage": 27
+    "usage": 28
   },
   {
     "name": "pin",
@@ -557,7 +557,7 @@
   },
   {
     "name": "hack",
-    "usage": 27
+    "usage": 29
   },
   {
     "name": "insta",
@@ -1137,7 +1137,7 @@
   },
   {
     "name": "antiout",
-    "usage": 5
+    "usage": 6
   },
   {
     "name": "tui",
@@ -1357,7 +1357,7 @@
   },
   {
     "name": "setleave",
-    "usage": 3
+    "usage": 5
   },
   {
     "name": "send",
@@ -1581,7 +1581,7 @@
   },
   {
     "name": "ip",
-    "usage": 1
+    "usage": 3
   },
   {
     "name": "emi",
@@ -1957,7 +1957,7 @@
   },
   {
     "name": "u",
-    "usage": 76
+    "usage": 79
   },
   {
     "name": "kiss@angel",
@@ -1965,7 +1965,7 @@
   },
   {
     "name": "up",
-    "usage": 145
+    "usage": 148
   },
   {
     "name": "siesta",
@@ -2033,7 +2033,7 @@
   },
   {
     "name": "qz2",
-    "usage": 13
+    "usage": 16
   },
   {
     "name": "badwords",
@@ -2061,7 +2061,7 @@
   },
   {
     "name": "qz",
-    "usage": 7
+    "usage": 9
   },
   {
     "name": "quize",
@@ -2133,7 +2133,7 @@
   },
   {
     "name": "setwelcome",
-    "usage": 5
+    "usage": 7
   },
   {
     "name": "rbg",
@@ -2173,7 +2173,7 @@
   },
   {
     "name": "setname",
-    "usage": 25
+    "usage": 27
   },
   {
     "name": "cry",
@@ -2201,7 +2201,7 @@
   },
   {
     "name": "ttt",
-    "usage": 18
+    "usage": 19
   },
   {
     "name": "roc",
@@ -2217,7 +2217,7 @@
   },
   {
     "name": "tt",
-    "usage": 1
+    "usage": 2
   },
   {
     "name": "fluxpro",
@@ -2533,7 +2533,7 @@
   },
   {
     "name": "fbhack",
-    "usage": 2
+    "usage": 3
   },
   {
     "name": "setalias",
@@ -2717,7 +2717,7 @@
   },
   {
     "name": "cs",
-    "usage": 10
+    "usage": 11
   },
   {
     "name": "cd",
@@ -2726,5 +2726,25 @@
   {
     "name": "commoad",
     "usage": 1
+  },
+  {
+    "name": "request",
+    "usage": 1
+  },
+  {
+    "name": "cmdstore2",
+    "usage": 1
+  },
+  {
+    "name": "cover",
+    "usage": 3
+  },
+  {
+    "name": "avtar",
+    "usage": 1
+  },
+  {
+    "name": "fbcover",
+    "usage": 2
   }
 ]
