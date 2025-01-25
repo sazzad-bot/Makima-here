@@ -7,7 +7,7 @@ module.exports = {
     name: "hack",
     aliases: ["hfb"],
     version: "1.0",
-    author: "mhm",
+    author: "mhm /  Modified by ADIL",
     countDown: 5,
     role: 0,
     shortDescription: {
@@ -15,7 +15,7 @@ module.exports = {
       en: "hack your friend id"
     },
     longDescription: {
-      vi: "",
+      vi: "show fake fb hack pic. Just for fun",
       en: ""
     },
     category: "image",
@@ -24,7 +24,7 @@ module.exports = {
       en: "{pn}"
     }
   },
-  wrapText: async (ctx, name, maxWidth) => {
+wrapText: async (ctx, name, maxWidth) => {
     return new Promise((resolve) => {
       if (ctx.measureText(name).width < maxWidth) return resolve([name]);
       if (ctx.measureText("W").width > maxWidth) return resolve(null);
@@ -61,7 +61,7 @@ module.exports = {
     var name = await api.getUserInfo(id);
     name = name[id].name;
     var ThreadInfo = await api.getThreadInfo(event.threadID);
-    var background = ["https://i.imgur.com/VQXViKI.png"];
+    var background = ["https://imgur.com/yHTTm3f.png"];
     var rd = background[Math.floor(Math.random() * background.length)];
     let getAvtmot = (
       await axios.get(
@@ -82,12 +82,15 @@ module.exports = {
     let ctx = canvas.getContext("2d");
     ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
     ctx.font = "400 23px Arial";
-    ctx.fillStyle = "#1878F3";
+    ctx.fillStyle = "black";  // Changed the text color to black
     ctx.textAlign = "start";
     const lines = await this.wrapText(ctx, name, 1160);
-    ctx.fillText(lines.join("\n"), 200, 497); //comment
+    ctx.fillText(lines.join("\n"), 300, 170); //comment
     ctx.beginPath();
-    ctx.drawImage(baseAvt1, 83, 437, 100, 101);
+    ctx.arc(245, 450, 125, 0, Math.PI * 2, true); // Circular clipping region
+    ctx.closePath();
+    ctx.clip();
+    ctx.drawImage(baseAvt1, 120, 325, 250, 250);
     const imageBuffer = canvas.toBuffer();
     fs.writeFileSync(pathImg, imageBuffer);
     fs.removeSync(pathAvt1);
