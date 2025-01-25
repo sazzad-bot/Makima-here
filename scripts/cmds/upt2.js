@@ -16,6 +16,7 @@ module.exports = {
   },
   onStart: async function ({ message }) {
 
+    const { exec } = require('child_process');
     const uptime = process.uptime();
     const formattedUptime = formatMilliseconds(uptime * 1000);
 
@@ -60,10 +61,16 @@ module.exports = {
 };
 
 async function getDiskUsage() {
-  const { stdout } = await exec('df -k /');
-  const [_, total, used] = stdout.split('\n')[1].split(/\s+/).filter(Boolean);
-  return { total: parseInt(total) * 1024, used: parseInt(used) * 1024 };
+  try {
+    const { stdout } = await exec('df -k /');
+    const [_, total, used] = stdout.split('\n')[1].split(/\s+/).filter(Boolean);
+    return { total: parseInt(total) * 1024, used: parseInt(used) * 1024 };
+  } catch (error) {
+    console.error('Error fetching disk usage:', error);
+    return { total: 0, used: 0 };
+  }
 }
+
 
 function formatUptime(seconds) {
   const days = Math.floor(seconds / 86400);
