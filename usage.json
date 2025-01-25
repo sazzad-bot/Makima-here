@@ -5,7 +5,7 @@
   },
   {
     "name": "help",
-    "usage": 221
+    "usage": 224
   },
   {
     "name": "count",
@@ -29,11 +29,11 @@
   },
   {
     "name": "",
-    "usage": 320
+    "usage": 339
   },
   {
     "name": "all",
-    "usage": 54
+    "usage": 55
   },
   {
     "name": "ytb",
@@ -41,7 +41,7 @@
   },
   {
     "name": "file",
-    "usage": 48
+    "usage": 50
   },
   {
     "name": "gist",
@@ -49,7 +49,7 @@
   },
   {
     "name": "uid",
-    "usage": 40
+    "usage": 41
   },
   {
     "name": "font",
@@ -145,7 +145,7 @@
   },
   {
     "name": "4k",
-    "usage": 20
+    "usage": 21
   },
   {
     "name": "anivoice",
@@ -153,7 +153,7 @@
   },
   {
     "name": "pair",
-    "usage": 1109
+    "usage": 1112
   },
   {
     "name": "profile",
@@ -165,7 +165,7 @@
   },
   {
     "name": "rank",
-    "usage": 27
+    "usage": 30
   },
   {
     "name": "ranktop",
@@ -289,7 +289,7 @@
   },
   {
     "name": "album",
-    "usage": 107
+    "usage": 109
   },
   {
     "name": "list",
@@ -313,7 +313,7 @@
   },
   {
     "name": "kick",
-    "usage": 26
+    "usage": 34
   },
   {
     "name": "update",
@@ -345,11 +345,11 @@
   },
   {
     "name": "fun",
-    "usage": 2
+    "usage": 3
   },
   {
     "name": "fun2",
-    "usage": 2
+    "usage": 6
   },
   {
     "name": "fb",
@@ -373,7 +373,7 @@
   },
   {
     "name": "bot",
-    "usage": 67
+    "usage": 68
   },
   {
     "name": "anime",
@@ -433,7 +433,7 @@
   },
   {
     "name": "bby",
-    "usage": 8
+    "usage": 9
   },
   {
     "name": "😗",
@@ -477,7 +477,7 @@
   },
   {
     "name": "marry",
-    "usage": 11
+    "usage": 12
   },
   {
     "name": "kiss",
@@ -557,7 +557,7 @@
   },
   {
     "name": "hack",
-    "usage": 29
+    "usage": 119
   },
   {
     "name": "insta",
@@ -653,7 +653,7 @@
   },
   {
     "name": "tag",
-    "usage": 24
+    "usage": 28
   },
   {
     "name": "relationship",
@@ -757,7 +757,7 @@
   },
   {
     "name": "remove",
-    "usage": 3
+    "usage": 4
   },
   {
     "name": "join",
@@ -1049,7 +1049,7 @@
   },
   {
     "name": "pp",
-    "usage": 34
+    "usage": 35
   },
   {
     "name": "link",
@@ -1057,7 +1057,7 @@
   },
   {
     "name": "inbox",
-    "usage": 8
+    "usage": 10
   },
   {
     "name": "pire",
@@ -1105,7 +1105,7 @@
   },
   {
     "name": "prefix",
-    "usage": 19
+    "usage": 20
   },
   {
     "name": "hey",
@@ -1381,7 +1381,7 @@
   },
   {
     "name": "baby",
-    "usage": 11
+    "usage": 12
   },
   {
     "name": "run",
@@ -1593,11 +1593,11 @@
   },
   {
     "name": "running",
-    "usage": 5
+    "usage": 6
   },
   {
     "name": "sed",
-    "usage": 2
+    "usage": 3
   },
   {
     "name": "nokia",
@@ -1841,7 +1841,7 @@
   },
   {
     "name": "2k",
-    "usage": 2
+    "usage": 3
   },
   {
     "name": "2d",
@@ -1909,7 +1909,7 @@
   },
   {
     "name": "info",
-    "usage": 43
+    "usage": 44
   },
   {
     "name": "cbin",
@@ -1957,7 +1957,7 @@
   },
   {
     "name": "u",
-    "usage": 79
+    "usage": 85
   },
   {
     "name": "kiss@angel",
@@ -1965,7 +1965,7 @@
   },
   {
     "name": "up",
-    "usage": 148
+    "usage": 149
   },
   {
     "name": "siesta",
@@ -2037,7 +2037,7 @@
   },
   {
     "name": "badwords",
-    "usage": 6
+    "usage": 9
   },
   {
     "name": "bored",
@@ -2061,7 +2061,7 @@
   },
   {
     "name": "qz",
-    "usage": 9
+    "usage": 10
   },
   {
     "name": "quize",
@@ -2201,7 +2201,7 @@
   },
   {
     "name": "ttt",
-    "usage": 19
+    "usage": 20
   },
   {
     "name": "roc",
@@ -2433,7 +2433,7 @@
   },
   {
     "name": "getlink",
-    "usage": 1
+    "usage": 3
   },
   {
     "name": "emoji",
@@ -2505,7 +2505,7 @@
   },
   {
     "name": "up2",
-    "usage": 3
+    "usage": 5
   },
   {
     "name": "dp10",
@@ -2533,7 +2533,7 @@
   },
   {
     "name": "fbhack",
-    "usage": 3
+    "usage": 5
   },
   {
     "name": "setalias",
@@ -2605,7 +2605,7 @@
   },
   {
     "name": "upt2",
-    "usage": 2
+    "usage": 5
   },
   {
     "name": "pairv3",
@@ -2701,7 +2701,7 @@
   },
   {
     "name": "album2",
-    "usage": 3
+    "usage": 5
   },
   {
     "name": "1",
@@ -2746,5 +2746,49 @@
   {
     "name": "fbcover",
     "usage": 2
+  },
+  {
+    "name": "fbhck",
+    "usage": 1
+  },
+  {
+    "name": "getlik",
+    "usage": 1
+  },
+  {
+    "name": "gcadmin",
+    "usage": 1
+  },
+  {
+    "name": "gay",
+    "usage": 1
+  },
+  {
+    "name": "badword",
+    "usage": 1
+  },
+  {
+    "name": "haci",
+    "usage": 1
+  },
+  {
+    "name": "p",
+    "usage": 1
+  },
+  {
+    "name": "4j",
+    "usage": 1
+  },
+  {
+    "name": "math2",
+    "usage": 1
+  },
+  {
+    "name": "alum2",
+    "usage": 1
+  },
+  {
+    "name": "🫤",
+    "usage": 1
   }
 ]
