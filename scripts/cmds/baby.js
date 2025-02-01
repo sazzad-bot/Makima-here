@@ -143,7 +143,7 @@ module.exports.onReply = async ({ api, event, Reply }) => {
 module.exports.onChat = async ({ api, event,message }) => {
   try{
     const body = event.body ? event.body.toLowerCase() : ""
-    if(body.startsWith("baby") || body.startsWith("bby") || body.startsWith("janu")){
+    if(body.startsWith("baby") || body.startsWith("bby") || body.startsWith("janu") || body.startsWith("bot")){
       const arr = body.replace(/^\S+\s*/, "")
       if(!arr){ api.sendMessage("𝗛𝗲𝗿𝗲 𝗜𝘀 𝘆𝗼𝘂𝗿 𝗠𝗮𝗸𝗶𝗺𝗮😘", event.threadID, (error, info) => {
       global.GoatBot.onReply.set(info.messageID, {
