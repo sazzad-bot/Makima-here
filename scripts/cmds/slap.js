@@ -1,44 +1,47 @@
-const DIG = require("discord-image-generation");
-const fs = require("fs-extra");
+this.config = {
+	name: "slap",
+	version: "1.0.2",
+	author: {
+		name: "NTKhang",
+		contacts: ""
+	},
+	cooldowns: 5,
+	role: 0,
+	shortDescription: "batman slap",
+	longDescription: "batman slap user mention or you",
+	category: "image",
+	envGlobal: {
+		tokenFacebook: "6628568379%7Cc1e620fa708a1d5696fb991c1bde5662"
+	}
+};
 
 module.exports = {
-  config: {
-    name: "slap",
-    version: "1.1",
-    author: "NTKhang",
-    countDown: 5,
-    role: 0,
-    shortDescription: "Batslap image",
-    longDescription: "Batslap image",
-    category: "image",
-    guide: {
-      en: "   {pn} @tag"
-    }
-  },
+	config: this.config,
+	start: async function ({ api, globalGoat, args, message, event, download }) {
+		const fs = require("fs-extra");
+		const axios = require("axios");
+		const { senderID, mentions } = event;
+		const pathBatSlap = __dirname + `/cache/batslap${Date.now()}.jpg`;
+		const { tokenFacebook } = globalGoat.configCommands.envGlobal;
 
-  langs: {
-    vi: {
-      noTag: "Bạn phải tag người bạn muốn tát"
-    },
-    en: {
-      noTag: "You must tag the person you want to slap"
-    }
-  },
+		function linkAvatar(uid) {
+			return encodeURIComponent(`https://graph.facebook.com/${uid}/picture?type=large&width=500&height=500&access_token=${tokenFacebook}`);
+		}
 
-  onStart: async function ({ event, message, usersData, args, getLang }) {
-    const uid1 = event.senderID;
-    const uid2 = Object.keys(event.mentions)[0];
-    if (!uid2)
-      return message.reply(getLang("noTag"));
-    const avatarURL1 = await usersData.getAvatarUrl(uid1);
-    const avatarURL2 = await usersData.getAvatarUrl(uid2);
-    const img = await new DIG.Batslap().getImage(avatarURL1, avatarURL2);
-    const pathSave = `${__dirname}/tmp/${uid1}_${uid2}Batslap.png`;
-    fs.writeFileSync(pathSave, Buffer.from(img));
-    const content = args.join(' ').replace(Object.keys(event.mentions)[0], "");
-    message.reply({
-      body: `${(content || "Bópppp 😵‍💫😵")}`,
-      attachment: fs.createReadStream(pathSave)
-    }, () => fs.unlinkSync(pathSave));
-  }
+		const targetId = Object.keys(mentions).length > 0 ? Object.keys(mentions)[0] : senderID;
+		let imgBuffer;
+		try {
+			imgBuffer = (await axios.get(`https://goatbot.up.railway.app/taoanhdep/batslap?apikey=ntkhang&author=${linkAvatar(senderID)}&target=${linkAvatar(targetId)}`, {
+				responseType: "arraybuffer"
+			})).data;
+		}
+		catch (error) {
+			let err;
+			if (error.response) err = JSON.parse(error.response.data.toString());
+			else err = error;
+			return message.reply(`Đã xảy ra lỗi ${err.error} ${err.message}`);
+		}
+		fs.writeFileSync(pathBatSlap, Buffer.from(imgBuffer));
+		message.reply({ attachment: fs.createReadStream(pathBatSlap) }, () => fs.unlinkSync(pathBatSlap));
+	}
 };
