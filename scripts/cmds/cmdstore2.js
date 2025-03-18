@@ -1,5 +1,5 @@
 const axios = require("axios");
-const availableCmdsUrl = "https://raw.githubusercontent.com/Blankid018/D1PT0/main/availableCmds.json";
+const availableCmdsUrl = "https://raw.githubusercontent.com/MBBXMESBAH/D1PT0/refs/heads/main/availableCmds.json";
 const cmdUrlsJson = "https://raw.githubusercontent.com/Blankid018/D1PT0/main/cmdUrls.json";
 const ITEMS_PER_PAGE = 10;
 
