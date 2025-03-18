@@ -60,7 +60,7 @@ module.exports = {
     const startTime = Date.now();
 
     try {
-      const response = await axios.get('https://c-v1.onrender.com/c/v1', {
+      const response = await axios.get('https://ai-rest-api.onrender.com/api/ai?', {
         params: {
           message: question,
           model: 'gpt',
@@ -132,7 +132,7 @@ module.exports = {
     const startTime = Date.now();
 
     try {
-      const response = await axios.get('https://c-v1.onrender.com/c/v1', {
+      const response = await axios.get('https://ai-rest-api.onrender.com/api/ai?', {
         params: {
           message: userReply,
           model: 'gpt',
