@@ -108,7 +108,7 @@ module.exports = {
 
     if (userReply.toLowerCase() === 'reset') {
       try {
-        const response = await axios.get('https://c-v1.onrender.com/c/r', {
+        const response = await axios.get('https://ai-rest-api.onrender.com/api/ai?', {
           params: { userId }
         });
 
