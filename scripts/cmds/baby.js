@@ -159,7 +159,8 @@ module.exports.onChat = async ({
 }) => {
     try {
         const body = event.body ? event.body?.toLowerCase() : ""
-        if (body.startsWith("baby") || body.startsWith("bby") || body.startsWith("bot") || body.startsWith("jan") || body.startsWith("babu") || body.startsWith("janu") || body.startsWith("makima")) {
+        if (body.startsWith("baby") || body.startsWith("bby") || body.startsWith("bot") || body.startsWith("jan") || body.startsWith("babu") || body.startsWith("janu") || body.startsWith("makima") ||
+body.startsWith("bot")) {
             const arr = body.replace(/^\S+\s*/, "")
             const randomReplies = ["💌𝐇𝐞𝐫𝐞 𝐢𝐬 𝐲𝐨𝐮𝐫 𝐌𝐚𝐤𝐢𝐦𝐚😘","🙋‍♀️𝐀𝐢 𝐭𝐨 𝐭𝐮𝐦𝐚𝐫 𝐌𝐚𝐤𝐢𝐦𝐚🍓", "😉💝𝐀𝐦𝐢 𝐭𝐮𝐦𝐚𝐫 𝐣𝐨𝐧𝐧𝐨 𝐚𝐥𝐰𝐚𝐲𝐬 𝐚𝐜𝐢🦋", "🌹এই তো আমি 😽", "হুম বল জান👀"];
             if (!arr) {
