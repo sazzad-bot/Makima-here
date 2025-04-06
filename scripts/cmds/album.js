@@ -43,7 +43,7 @@ module.exports = {
         "❤️‍🩹 𝗖𝗵𝗼𝗼𝘀𝗲 𝗮𝗻 𝗼𝗽𝘁𝗶𝗼𝗻𝘀 𝗕𝗮𝗯𝘆 <💝\n" +
         "✿━━━━━━━━━━━━━━━━━━━━━━━✿\n" +
         albumOptions
-          .map((option, index) => `${index + 1}. ${option} 🐤`)
+          .map((option, index) => `${index + 1}. ${option} 💌`)
           .join("\n") +
         "\n✿━━━━━━━━━━━━━━━━━━━━━━━✿";
 
@@ -80,7 +80,7 @@ module.exports = {
         "❤️‍🩹 𝗖𝗵𝗼𝗼𝘀𝗲 𝗮𝗻 𝗼𝗽𝘁𝗶𝗼𝗻𝘀 𝗕𝗮𝗯𝘆 <💝\n" +
         "✿━━━━━━━━━━━━━━━━━━━━━━━✿\n" +
         albumOptions
-          .map((option, index) => `${index + 11}. ${option} 🐤`)
+          .map((option, index) => `${index + 11}. ${option} 💌`)
           .join("\n") +
         "\n✿━━━━━━━━━━━━━━━━━━━━━━━✿";
 
@@ -292,7 +292,7 @@ module.exports = {
         cp = "𝗡𝗮𝘄 𝗕𝗮𝗯𝘆 𝗦𝗮𝗱 𝘃𝗶𝗱𝗲𝗼 <🥺";
       } else if (reply === 4) {
         query = "anime";
-        cp = "𝗡𝗮𝘄 𝗕𝗮𝗯𝘆 𝗮𝗻𝗶𝗺 𝘃𝗶𝗱𝗲𝗼 <😘";
+        cp = "𝗡𝗮𝘄 𝗕𝗮𝗯𝘆 𝗔𝗻𝗶𝗺𝗲 𝘃𝗶𝗱𝗲𝗼 <😘";
       } else if (reply === 5) {
         query = "video";
         cp = "𝗡𝗮𝘄 𝗕𝗮𝗯𝘆 𝗖𝗮𝗿𝘁𝗼𝗼𝗻 𝘃𝗶𝗱𝗲𝗼 <😇";
