@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const baseApiUrl = async () => {
 	const base = await axios.get(
-`https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`
+`https://raw.githubusercontent.com/Mostakim0978/D1PT0/refs/heads/main/baseApiUrl.json`
 	);
 	return base.data.api;
 };
@@ -46,12 +46,12 @@ module.exports = {
   videoID = match ? match[1] : null;
 				const { data: { title, downloadLink, quality } } = await axios.get(`${await baseApiUrl()}/ytDl3?link=${videoID}&format=${format}&quality=3`);
 await api.sendMessage({
-					body: `• ✅𝗛𝗲𝗿𝗲 𝘆𝗼𝘂𝗿 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗜𝘁𝗲𝗺 ➣\n𝗧𝗶𝘁𝗹𝗲: ${title}\n• 𝗤𝘂𝗮𝗹𝗶𝘁𝘆: ${quality}`,
+					body: `• Title: ${title}\n• Quality: ${quality}`,
 					attachment: await dipto(downloadLink, path)
 				}, event.threadID, () => fs.unlinkSync(path), event.messageID);
 			} catch (e) {
 				console.error(e);
-				return api.sendMessage('❌ 𝐅𝐚𝐢𝐥𝐞𝐝 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐭𝐡𝐞 𝐯𝐢𝐝𝐞𝐨/𝐚𝐮𝐝𝐢𝐨. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐠𝐚𝐢𝐧 𝐥𝐚𝐭𝐞𝐫.', event.threadID, event.messageID);
+				return api.sendMessage('❌ Failed to download the video/audio. Please try again later.', event.threadID, event.messageID);
 			}
 		} }
 		args.shift();
@@ -61,11 +61,11 @@ await api.sendMessage({
 		try {
 			result = (await axios.get(`${await baseApiUrl()}/ytFullSearch?songName=${keyWord}`)).data.slice(0, maxResults);
 		} catch (err) {
-			return api.sendMessage("❌ 𝐀𝐧 𝐞𝐫𝐫𝐨𝐫 𝐨𝐜𝐜𝐮𝐫𝐫𝐞𝐝: " + err.message, event.threadID, event.messageID);
+			return api.sendMessage("❌ An error occurred: " + err.message, event.threadID, event.messageID);
 		}
 
 		if (result.length === 0) {
-			return api.sendMessage("⭕ 𝐍𝐨 𝐬𝐞𝐚𝐫𝐜𝐡 𝐫𝐞𝐬𝐮𝐥𝐭𝐬 𝐦𝐚𝐭𝐜𝐡 𝐭𝐡𝐞 𝐤𝐞𝐲𝐰𝐨𝐫𝐝: " + keyWord, event.threadID, event.messageID);
+			return api.sendMessage("⭕ No search results match the keyword: " + keyWord, event.threadID, event.messageID);
 		}
 
 		let msg = "";
@@ -94,7 +94,7 @@ await api.sendMessage({
 		const choice = parseInt(event.body);
 
 		if (isNaN(choice) || choice <= 0 || choice > result.length) {
-			return api.sendMessage('❌ 𝐈𝐧𝐯𝐚𝐥𝐢𝐝 𝐜𝐡𝐨𝐢𝐜𝐞. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐩𝐥𝐲 𝐰𝐢𝐭𝐡 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐧𝐮𝐦𝐛𝐞𝐫.', event.threadID, event.messageID);
+			return api.sendMessage('❌ Invalid choice. Please reply with a valid number.', event.threadID, event.messageID);
 		}
 
 		const selectedVideo = result[choice - 1];
@@ -108,12 +108,12 @@ await api.sendMessage({
 
 				api.unsendMessage(Reply.messageID);
 				await api.sendMessage({
-					body: `✅𝗛𝗲𝗿𝗲 𝘆𝗼𝘂𝗿 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗜𝘁𝗲𝗺 ➣\n• 𝗧𝗶𝘁𝗹𝗲: ${title}\n• 𝗤𝘂𝗮𝗹𝗶𝘁𝘆: ${quality}`,
+					body: `• 🎁𝐓𝐢𝐭𝐥𝐞: ${title}\n• ✨𝐐𝐮𝐚𝐥𝐢𝐭𝐲: ${quality}`,
 					attachment: await dipto(downloadLink, path)
 				}, event.threadID, () => fs.unlinkSync(path), event.messageID);
 			} catch (e) {
 				console.error(e);
-				return api.sendMessage('❌ 𝐅𝐚𝐢𝐥𝐞𝐝 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐭𝐡𝐞 𝐯𝐢𝐝𝐞𝐨/𝐚𝐮𝐝𝐢𝐨. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐠𝐚𝐢𝐧 𝐥𝐚𝐭𝐞𝐫.', event.threadID, event.messageID);
+				return api.sendMessage('❌ Failed to download the video/audio. Please try again later.', event.threadID, event.messageID);
 			}
 		}
 
@@ -127,7 +127,7 @@ await api.sendMessage({
 				}, event.threadID, event.messageID);
 			} catch (e) {
 				console.error(e);
-				return api.sendMessage('❌ 𝐅𝐚𝐢𝐥𝐞𝐝 𝐭𝐨 𝐫𝐞𝐭𝐫𝐢𝐞𝐯𝐞 𝐯𝐢𝐝𝐞𝐨 𝐢𝐧𝐟𝐨. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐠𝐚𝐢𝐧 𝐥𝐚𝐭𝐞𝐫.', event.threadID, event.messageID);
+				return api.sendMessage('❌ Failed to retrieve video info. Please try again later.', event.threadID, event.messageID);
 			}
 		}
 	}
