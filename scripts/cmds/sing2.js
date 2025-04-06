@@ -66,7 +66,7 @@ async function onStart({ api, args, event }) {
             }
         } else {
             const songName = args.join(' ');
-            w = await api.sendMessage(`Searching song "${songName}"... `, event.threadID);
+            w = await api.sendMessage(`🔎𝗦𝗲𝗮𝗿𝗰𝗵𝗶𝗻𝗴 𝗦𝗼𝗻𝗴🎵"${songName}"... `, event.threadID);
             const r = await yts(songName);
             const videos = r.videos.slice(0, 50);
 
@@ -82,7 +82,7 @@ async function onStart({ api, args, event }) {
         const shortenedLink = (await axios.get(`https://tinyurl.com/api-create${o}?url=${encodeURIComponent(downloadLink)}`)).data;
 
         await api.sendMessage({
-            body: `🔖 - 𝚃𝚒𝚝𝚕𝚎: ${title}\n✨ - 𝚀𝚞𝚊𝚕𝚒𝚝𝚢: ${quality}\n\n📥 - 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙻𝚒𝚗𝚔: ${shortenedLink}`,
+            body: `🔖 - 𝐓𝐢𝐭𝐥𝐞: ${title}\n✨ - 𝐐𝐮𝐚𝐥𝐢𝐭𝐲: ${quality}\n\n📥 - 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐋𝐢𝐧𝐤: ${shortenedLink}`,
             attachment: await global.utils.getStreamFromURL(downloadLink, title+'.mp3')
         }, event.threadID, event.messageID);
     } catch (e) {
