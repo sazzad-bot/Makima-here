@@ -89,7 +89,7 @@ module.exports = {
             return;
           }
           global.GoatBot.onReply.set(info.messageID, {
-            commandName: "album",
+            commandName: "album2",
             senderID: senderID,
             messageType: command,
             files: files,
@@ -153,7 +153,7 @@ module.exports = {
   onReply: async function ({ api, event, Reply, args }) {
     const { commandName, senderID, messageType, files } = Reply;
 
-    if (commandName !== "album" || senderID !== event.senderID || !messageType || !files) {
+    if (commandName !== "album2" || senderID !== event.senderID || !messageType || !files) {
       return;
     }
 
