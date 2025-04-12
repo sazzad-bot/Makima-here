@@ -6,7 +6,7 @@ const ytSearch = require("yt-search");
 const CACHE_FOLDER = path.join(__dirname, "cache");
 
 async function downloadAudio(videoId, filePath) {
-    const url = `https://audio-kshitiz-production.up.railway.app/download?id=${videoId}`;
+    const url = `https://yt-dl-api-4y4g.onrender.com/download?id=${videoId}`;
     const writer = fs.createWriteStream(filePath);
 
     const response = await axios({
@@ -29,7 +29,9 @@ async function fetchAudioFromReply(api, event, message) {
     }
 
     const shortUrl = attachment.url;
-    const audioRecResponse = await axios.get(`https://audio-recon-ahcw.onrender.com/kshitiz?url=${encodeURIComponent(shortUrl)}`);
+    const reconApi = `https://audio-recon-api.onrender.com/adil?url=${encodeURIComponent(shortUrl)}`;
+
+    const audioRecResponse = await axios.get(reconApi);
     return audioRecResponse.data.title;
 }
 
