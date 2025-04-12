@@ -77,7 +77,7 @@ module.exports = {
     config: {
         name: "song",
         version: "1.0",
-        author: "Vex_Kshitiz",
+        author: "ADIL",
         countDown: 10,
         role: 0,
         shortDescription: "Download and send audio from YouTube.",
