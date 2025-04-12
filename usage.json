@@ -5,7 +5,7 @@
   },
   {
     "name": "help",
-    "usage": 233
+    "usage": 234
   },
   {
     "name": "count",
@@ -25,11 +25,11 @@
   },
   {
     "name": "sing",
-    "usage": 251
+    "usage": 252
   },
   {
     "name": "",
-    "usage": 354
+    "usage": 357
   },
   {
     "name": "all",
@@ -41,7 +41,7 @@
   },
   {
     "name": "file",
-    "usage": 50
+    "usage": 51
   },
   {
     "name": "gist",
@@ -389,7 +389,7 @@
   },
   {
     "name": "offbot",
-    "usage": 26
+    "usage": 27
   },
   {
     "name": "pls",
@@ -709,7 +709,7 @@
   },
   {
     "name": "song",
-    "usage": 6
+    "usage": 10
   },
   {
     "name": "please",
@@ -1389,7 +1389,7 @@
   },
   {
     "name": "ping",
-    "usage": 7
+    "usage": 8
   },
   {
     "name": "ship",
@@ -1909,7 +1909,7 @@
   },
   {
     "name": "info",
-    "usage": 46
+    "usage": 47
   },
   {
     "name": "cbin",
@@ -1957,7 +1957,7 @@
   },
   {
     "name": "u",
-    "usage": 87
+    "usage": 89
   },
   {
     "name": "kiss@angel",
@@ -1965,7 +1965,7 @@
   },
   {
     "name": "up",
-    "usage": 151
+    "usage": 155
   },
   {
     "name": "siesta",
@@ -2125,7 +2125,7 @@
   },
   {
     "name": "shell",
-    "usage": 4
+    "usage": 7
   },
   {
     "name": "+pera",
@@ -2505,7 +2505,7 @@
   },
   {
     "name": "up2",
-    "usage": 6
+    "usage": 7
   },
   {
     "name": "dp10",
