@@ -32,13 +32,19 @@ async function fetchAudioFromReply(api, event, message) {
     const reconApi = `https://audio-recon-api.onrender.com/adil?url=${encodeURIComponent(shortUrl)}`;
 
     const audioRecResponse = await axios.get(reconApi);
-    return audioRecResponse.data.title;
+    return {
+        title: audioRecResponse.data.title,
+        videoId: null
+    };
 }
 
 async function fetchAudioFromQuery(query) {
     const searchResults = await ytSearch(query);
     if (searchResults && searchResults.videos && searchResults.videos.length > 0) {
-        return searchResults.videos[0].videoId;
+        return {
+            title: searchResults.videos[0].title,
+            videoId: searchResults.videos[0].videoId
+        };
     } else {
         throw new Error("No results found for the given query.");
     }
@@ -48,28 +54,35 @@ async function handleAudioCommand(api, event, args, message) {
     api.setMessageReaction("🕢", event.messageID, () => {}, true);
 
     try {
-        let videoId;
+        let result;
         if (event.messageReply && event.messageReply.attachments && event.messageReply.attachments.length > 0) {
-            const title = await fetchAudioFromReply(api, event, message);
-            videoId = await fetchAudioFromQuery(title);
+            result = await fetchAudioFromReply(api, event, message);
+            // If we got title from reply, now search YouTube for that title
+            const searchData = await fetchAudioFromQuery(result.title);
+            result.videoId = searchData.videoId;
+            result.title = searchData.title; // Use the YouTube title instead
         } else if (args.length > 0) {
             const query = args.join(" ");
-            videoId = await fetchAudioFromQuery(query);
+            result = await fetchAudioFromQuery(query);
         } else {
             message.reply("Please provide a query or reply to a valid video/audio attachment.");
             return;
         }
 
-        const filePath = path.join(CACHE_FOLDER, `${videoId}.mp3`);
-        await downloadAudio(videoId, filePath);
+        const filePath = path.join(CACHE_FOLDER, `${result.videoId}.mp3`);
+        await downloadAudio(result.videoId, filePath);
 
         const audioStream = fs.createReadStream(filePath);
-        message.reply({ body: `🎵 Here is your audio:`, attachment: audioStream });
+        message.reply({ 
+            body: `🎵 ${result.title}`,
+            attachment: audioStream 
+        });
         api.setMessageReaction("✅", event.messageID, () => {}, true);
 
     } catch (error) {
         console.error("Error:", error.message);
         message.reply("An error occurred while processing your request.");
+        api.setMessageReaction("❌", event.messageID, () => {}, true);
     }
 }
 
