@@ -1,4 +1,4 @@
-# Goat Bot V2
+# Makima Bot🍒
 
 ## Original Source Code
 - **GitHub Repository:** [https://github.com/ntkhang03/Goat-Bot-V2](https://github.com/ntkhang03/Goat-Bot-V2)
