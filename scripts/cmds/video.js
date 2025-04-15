@@ -1,118 +1,104 @@
 const axios = require("axios");
-const fs = require('fs-extra');
-const path = require('path');
-const { getStreamFromURL, shortenURL, randomString } = global.utils;
+const fs = require("fs-extra");
+const path = require("path");
+const ytSearch = require("yt-search");
 
-const API_KEYS = [
-    'b38444b5b7mshc6ce6bcd5c9e446p154fa1jsn7bbcfb025b3b',
-    '719775e815msh65471c929a0203bp10fe44jsndcb70c04bc42',
-    
-    'a2743acb5amsh6ac9c5c61aada87p156ebcjsnd25f1ef87037',
-    '8e938a48bdmshcf5ccdacbd62b60p1bffa7jsn23b2515c852d',
-    'f9649271b8mshae610e65f24780cp1fff43jsn808620779631',
-    '8e906ff706msh33ffb3d489a561ap108b70jsne55d8d497698',
+const CACHE_FOLDER = path.join(__dirname, "cache");
 
-    '4bd76967f9msh2ba46c8cf871b4ep1eab38jsn19c9067a90bb',
-];
+async function downloadVideo(videoId, filePath) {
+    const url = `https://yt-dl-api-48r3.onrender.com/download-video?id=${videoId}`;
+    const writer = fs.createWriteStream(filePath);
 
-async function video(api, event, args, message) {
-    api.setMessageReaction("🕢", event.messageID, (err) => {}, true);
-    try {
-        let title = '';
-        let shortUrl = '';
-        let videoId = '';
+    const response = await axios({
+        url,
+        method: "GET",
+        responseType: "stream",
+    });
 
-        const extractShortUrl = async () => {
-            const attachment = event.messageReply.attachments[0];
-            if (attachment.type === "video" || attachment.type === "audio") {
-                return attachment.url;
-            } else {
-                throw new Error("Invalid attachment type.");
-            }
-        };
-
-        const getRandomApiKey = () => {
-            const randomIndex = Math.floor(Math.random() * API_KEYS.length);
-            return API_KEYS[randomIndex];
-        };
-
-        if (event.messageReply && event.messageReply.attachments && event.messageReply.attachments.length > 0) {
-            shortUrl = await extractShortUrl();
-            const musicRecognitionResponse = await axios.get(`https://audio-recon-ahcw.onrender.com/kshitiz?url=${encodeURIComponent(shortUrl)}`);
-            title = musicRecognitionResponse.data.title;
-            const searchResponse = await axios.get(`https://youtube-kshitiz-gamma.vercel.app/yt?search=${encodeURIComponent(title)}`);
-            if (searchResponse.data.length > 0) {
-                videoId = searchResponse.data[0].videoId;
-            }
-
-            shortUrl = await shortenURL(shortUrl);
-        } else if (args.length === 0) {
-            message.reply("Please provide a video name or reply to a video or audio attachment.");
-            return;
-        } else {
-            title = args.join(" ");
-            const searchResponse = await axios.get(`https://youtube-kshitiz-gamma.vercel.app/yt?search=${encodeURIComponent(title)}`);
-            if (searchResponse.data.length > 0) {
-                videoId = searchResponse.data[0].videoId;
-            }
-
-            const videoUrlResponse = await axios.get(`https://yt-kshitiz.vercel.app/download?id=${encodeURIComponent(videoId)}&apikey=${getRandomApiKey()}`);
-            if (videoUrlResponse.data.length > 0) {
-                shortUrl = await shortenURL(videoUrlResponse.data[0]);
-            }
-        }
-
-        if (!videoId) {
-            message.reply("No video found for the given query.");
-            return;
-        }
-
-        const downloadResponse = await axios.get(`https://yt-kshitiz.vercel.app/download?id=${encodeURIComponent(videoId)}&apikey=${getRandomApiKey()}`);
-        const videoUrl = downloadResponse.data[0];
-
-        if (!videoUrl) {
-            message.reply("Failed to retrieve download link for the video.");
-            return;
-        }
-
-        const writer = fs.createWriteStream(path.join(__dirname, "cache", `${videoId}.mp4`));
-        const response = await axios({
-            url: videoUrl,
-            method: 'GET',
-            responseType: 'stream'
-        });
-
+    return new Promise((resolve, reject) => {
         response.data.pipe(writer);
+        writer.on("finish", resolve);
+        writer.on("error", reject);
+    });
+}
 
-        writer.on('finish', () => {
-            const videoStream = fs.createReadStream(path.join(__dirname, "cache", `${videoId}.mp4`));
-            message.reply({ body: `📹 Playing: ${title}`, attachment: videoStream });
-            api.setMessageReaction("✅", event.messageID, () => {}, true);
-        });
+async function fetchVideoFromReply(api, event, message) {
+    const attachment = event.messageReply.attachments[0];
+    if (!attachment || (attachment.type !== "video" && attachment.type !== "audio")) {
+        throw new Error("Please reply to a valid video or audio attachment.");
+    }
 
-        writer.on('error', (error) => {
-            console.error("Error:", error);
-            message.reply("Error downloading the video.");
+    const shortUrl = attachment.url;
+    const reconApi = `https://audio-recon-api.onrender.com/adil?url=${encodeURIComponent(shortUrl)}`;
+
+    const videoRecResponse = await axios.get(reconApi);
+    return {
+        title: videoRecResponse.data.title,
+        videoId: null
+    };
+}
+
+async function fetchVideoFromQuery(query) {
+    const searchResults = await ytSearch(query);
+    if (searchResults && searchResults.videos && searchResults.videos.length > 0) {
+        return {
+            title: searchResults.videos[0].title,
+            videoId: searchResults.videos[0].videoId
+        };
+    } else {
+        throw new Error("No results found for the given query.");
+    }
+}
+
+async function handleVideoCommand(api, event, args, message) {
+    api.setMessageReaction("⏳", event.messageID, () => {}, true);
+
+    try {
+        let result;
+        if (event.messageReply && event.messageReply.attachments && event.messageReply.attachments.length > 0) {
+            result = await fetchVideoFromReply(api, event, message);
+            // If we got title from reply, now search YouTube for that title
+            const searchData = await fetchVideoFromQuery(result.title);
+            result.videoId = searchData.videoId;
+            result.title = searchData.title; // Use the YouTube title instead
+        } else if (args.length > 0) {
+            const query = args.join(" ");
+            result = await fetchVideoFromQuery(query);
+        } else {
+            message.reply("Please provide a query or reply to a valid video/audio attachment.");
+            return;
+        }
+
+        const filePath = path.join(CACHE_FOLDER, `${result.videoId}.mp4`);
+        await downloadVideo(result.videoId, filePath);
+
+        const videoStream = fs.createReadStream(filePath);
+        message.reply({ 
+            body: `•𝐓𝐢𝐭𝐥𝐞🏷️:🎥 ${result.title}`,
+            attachment: videoStream 
         });
+        api.setMessageReaction("✅", event.messageID, () => {}, true);
+
     } catch (error) {
-        console.error("Error:", error);
-        message.reply("An error occurred.");
+        console.error("Error:", error.message);
+        message.reply("An error occurred while processing your request.");
+        api.setMessageReaction("❌", event.messageID, () => {}, true);
     }
 }
 
 module.exports = {
     config: {
-        name: "video", 
+        name: "video",
         version: "1.0",
-        author: "Vex_kshitiz",
+        author: "ADIL",
         countDown: 10,
         role: 0,
-        shortDescription: "play video from youtube",
-        longDescription: "play video from youtube support audio recognition.",
-        category: "music",
-        guide: "{p} video videoname / reply to audio or video" 
+        shortDescription: "Download and send video from YouTube.",
+        longDescription: "Download video from YouTube based on a query or attachment.",
+        category: "video",
+        guide: "{p}video [query] or reply to a video/audio attachment",
     },
     onStart: function ({ api, event, args, message }) {
-        return video(api, event, args, message);
-    }
+        return handleVideoCommand(api, event, args, message);
+    },
 };
