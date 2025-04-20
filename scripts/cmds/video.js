@@ -6,7 +6,7 @@ const ytSearch = require("yt-search");
 const CACHE_FOLDER = path.join(__dirname, "cache");
 
 async function downloadVideo(videoId, filePath) {
-    const url = `https://yt-dl-api-48r3.onrender.com/download-video?id=${videoId}`;
+    const url = `https://yt-dl-api-adil.onrender.com/download-video?id=${videoId}`;
     const writer = fs.createWriteStream(filePath);
 
     const response = await axios({
