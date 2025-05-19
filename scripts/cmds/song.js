@@ -5,8 +5,8 @@ const ytSearch = require("yt-search");
 
 const CACHE_FOLDER = path.join(__dirname, "cache");
 
-async function downloadAudio(videoId, filePath) {
-    const url = `https://yt-dl-api-adil.onrender.com/download-audio?id=${videoId}`;
+async function downloadAudio(videoUrl, filePath) {
+    const url = https://yt-dl-2.onrender.com/api/audio-download?url=${encodeURIComponent(videoUrl)};
     const writer = fs.createWriteStream(filePath);
 
     const response = await axios({
@@ -28,13 +28,13 @@ async function fetchAudioFromReply(api, event, message) {
         throw new Error("Please reply to a valid video or audio attachment.");
     }
 
-    const shortUrl = attachment.url;
-    const reconApi = `https://audio-recon-api.onrender.com/adil?url=${encodeURIComponent(shortUrl)}`;
+    const videoUrl = attachment.url;
+    const infoApi = https://yt-dl-2.onrender.com/api/video-info?url=${encodeURIComponent(videoUrl)};
 
-    const audioRecResponse = await axios.get(reconApi);
+    const response = await axios.get(infoApi);
     return {
-        title: audioRecResponse.data.title,
-        videoId: null
+        title: response.data.title || "Unknown Title",
+        videoUrl: videoUrl
     };
 }
 
@@ -43,7 +43,7 @@ async function fetchAudioFromQuery(query) {
     if (searchResults && searchResults.videos && searchResults.videos.length > 0) {
         return {
             title: searchResults.videos[0].title,
-            videoId: searchResults.videos[0].videoId
+            videoUrl: searchResults.videos[0].url
         };
     } else {
         throw new Error("No results found for the given query.");
@@ -57,10 +57,6 @@ async function handleAudioCommand(api, event, args, message) {
         let result;
         if (event.messageReply && event.messageReply.attachments && event.messageReply.attachments.length > 0) {
             result = await fetchAudioFromReply(api, event, message);
-            // If we got title from reply, now search YouTube for that title
-            const searchData = await fetchAudioFromQuery(result.title);
-            result.videoId = searchData.videoId;
-            result.title = searchData.title; // Use the YouTube title instead
         } else if (args.length > 0) {
             const query = args.join(" ");
             result = await fetchAudioFromQuery(query);
@@ -69,12 +65,18 @@ async function handleAudioCommand(api, event, args, message) {
             return;
         }
 
-        const filePath = path.join(CACHE_FOLDER, `${result.videoId}.mp3`);
-        await downloadAudio(result.videoId, filePath);
+        // Create cache folder if it doesn't exist
+        if (!fs.existsSync(CACHE_FOLDER)) {
+            fs.mkdirSync(CACHE_FOLDER);
+        }
+
+        const fileName = ${result.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.mp3;
+        const filePath = path.join(CACHE_FOLDER, fileName);
+        await downloadAudio(result.videoUrl, filePath);
 
         const audioStream = fs.createReadStream(filePath);
         message.reply({ 
-            body: `🎵 ${result.title}`,
+            body: 🎵 ${result.title},
             attachment: audioStream 
         });
         api.setMessageReaction("✅", event.messageID, () => {}, true);
@@ -96,7 +98,7 @@ module.exports = {
         shortDescription: "Download and send audio from YouTube.",
         longDescription: "Download audio from YouTube based on a query or attachment.",
         category: "music",
-        guide: "{p}audio [query] or reply to a video/audio attachment",
+        guide: "{p}song [query] or reply to a video/audio attachment",
     },
     onStart: function ({ api, event, args, message }) {
         return handleAudioCommand(api, event, args, message);
