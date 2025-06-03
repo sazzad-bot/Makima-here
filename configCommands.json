@@ -50,6 +50,9 @@
     },
     "wanted2": {
       "deltaNext": 5
+    },
+    "song": {
+      "noPrefix": true
     }
   },
   "envEvents": {
