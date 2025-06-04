@@ -22,7 +22,7 @@ async function checkAternos(api, forceSend = false) {
 🔌 𝐏𝐨𝐫𝐭: 22518   
 📊 𝐀𝐭𝐞𝐫𝐧𝐨𝐬 𝐒𝐭𝐚𝐭𝐮𝐬: ${data.status}
 📦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: ${data.version}
-📝 𝐒𝐞𝐫𝐯𝐞𝐫 𝐌𝐨𝐫𝐞 𝐃𝐞𝐭𝐚𝐢𝐥𝐬 
+📝 𝐒𝐞𝐫𝐯𝐞𝐫 𝐌𝐨𝐫𝐞 𝐃𝐞𝐭𝐚𝐢𝐥𝐬: 📌Server is now available on Bedrock and Java both ✅
 🔗 𝐀𝐏𝐊 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐥𝐢𝐧𝐤: https://mcpedl.org/uploads_files/14-05-2025/minecraft-1-21-81.apk`;
 
       if (lastMessageID) {
