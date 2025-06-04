@@ -21,7 +21,8 @@ async function checkAternos(api, forceSend = false) {
 🌐 𝐈𝐏: true-fighter.aternos.me
 🔌 𝐏𝐨𝐫𝐭: 22518   
 📊 𝐀𝐭𝐞𝐫𝐧𝐨𝐬 𝐒𝐭𝐚𝐭𝐮𝐬: ${data.status}
-📦 𝐌𝐢𝐧𝐞𝐜𝐫𝐚𝐟𝐭 𝐁𝐞𝐝𝐫𝐨𝐜𝐤 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: ${data.version}`;
+📦 𝐌𝐢𝐧𝐞𝐜𝐫𝐚𝐟𝐭 𝐁𝐞𝐝𝐫𝐨𝐜𝐤 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: ${data.version}
+ 📎 𝐂𝐥𝐢𝐜𝐤 𝐭𝐡𝐞 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐥𝐢𝐧𝐤:`;
 
       if (lastMessageID) {
         try {
