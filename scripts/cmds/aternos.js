@@ -9,21 +9,23 @@ let lastMessageID = null;
 
 async function checkAternos(api, forceSend = false) {
   try {
-    const response = await axios.get("https://aterbot-adil.onrender.com//status");
+    const response = await axios.get("https://aterbot-adil.onrender.com/status");
     const data = response.data;
 
     const newStatus = `${data.status}-${data.version}`;
+    const statusEmoji = data.status.toLowerCase() === "online" ? "✅" : "❌";
 
     if (forceSend || newStatus !== lastStatus) {
       lastStatus = newStatus;
 
-      const message = `🌍⛏️𝐌𝐢𝐧𝐞𝐜𝐫𝐚𝐟𝐭 𝐒𝐞𝐫𝐯𝐞𝐫 𝐈𝐧𝐟𝐨ℹ️:
-🌐 𝐈𝐏: true-fighter.aternos.me
-🔌 𝐏𝐨𝐫𝐭: 22518   
-📊 𝐀𝐭𝐞𝐫𝐧𝐨𝐬 𝐒𝐭𝐚𝐭𝐮𝐬: ${data.status}
-📦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: ${data.version}
-📝 𝐒𝐞𝐫𝐯𝐞𝐫 𝐌𝐨𝐫𝐞 𝐃𝐞𝐭𝐚𝐢𝐥𝐬: 📌Server is now available on Bedrock and Java both ✅
-🔗 𝐀𝐏𝐊 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐥𝐢𝐧𝐤: https://mcpedl.org/uploads_files/14-05-2025/minecraft-1-21-81.apk`;
+      const message = `🌍⛏️ 𝐌𝐢𝐧𝐞𝐜𝐫𝐚𝐟𝐭 𝐒𝐞𝐫𝐯𝐞𝐫 𝐈𝐧𝐟𝐨 ℹ️:
+🌐 𝐈𝐏: ${data.host}
+🔌 𝐏𝐨𝐫𝐭: ${data.port}
+📊 𝐒𝐭𝐚𝐭𝐮𝐬: ${statusEmoji} ${data.status.toUpperCase()}
+⏱️ 𝐒𝐌𝐏 𝐁𝐨𝐭 𝐔𝐩𝐭𝐢𝐦𝐞: ${data.uptime}
+📦 𝐒𝐮𝐩𝐩𝐨𝐫𝐭𝐞𝐝 𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐬: ${data.version}
+📝 𝐃𝐞𝐭𝐚𝐢𝐥𝐬: Available on both Bedrock & Java ✅
+🔗 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐀𝐏𝐊: https://mcpedl.org/uploads_files/14-05-2025/minecraft-1-21-81.apk`;
 
       if (lastMessageID) {
         try {
@@ -43,7 +45,6 @@ async function checkAternos(api, forceSend = false) {
     }
   } catch (err) {
     console.error("[Aternos Monitor] Error fetching API:", err.message);
-    // Send error message to the group chat
     const errorMsg = `⚠️ Aternos API Monitor Error:\n${err.message}`;
     api.sendMessage(errorMsg, targetGroupID);
   }
@@ -98,7 +99,7 @@ module.exports = {
     }
   },
 
-  onChat: async function({ event, api }) {
+  onChat: async function ({ event, api }) {
     const msg = event.body?.toLowerCase();
     if (msg === "aternos") {
       await checkAternos(api, true);
