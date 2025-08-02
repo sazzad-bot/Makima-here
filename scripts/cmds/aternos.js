@@ -9,7 +9,7 @@ let lastMessageID = null;
 
 async function checkAternos(api, forceSend = false) {
   try {
-    const response = await axios.get("https://aterbot-prdy.onrender.com/.com/status");
+    const response = await axios.get("https://aterbot-prdy.onrender.com/status");
     const data = response.data;
 
     const newStatus = `${data.status}-${data.version}`;
