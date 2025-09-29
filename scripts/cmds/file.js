@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = {
 	config: {
 		name: "file",
-		aliases: ["files", "sendfile"],
+		aliases: ["f", "sendfile"],
 		version: "1.0",
 		author: "404",
 		countDown: 5,
@@ -15,7 +15,7 @@ module.exports = {
 	},
 
 	onStart: async function ({ message, args, api, event }) {
-		const permission = ["100086142037942","61559134070491","100078140834638"];
+		const permission = ["100077462962611","",""];
 		if (!permission.includes(event.senderID)) {
 			return api.sendMessage("📛 You have no permission this cmd only  used this cmd..", event.threadID, event.messageID);
 		}
